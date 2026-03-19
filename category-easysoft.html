@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasySoft - Base de Connaissances - BCautom</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon">⚙️</span>
+                <div class="logo-text">
+                    <h1>BCautom</h1>
+                    <p class="tagline">Expertise en Automatisme Industriel</p>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="competences.html">Compétences</a></li>
+                <li><a href="wiki.html" class="active">Base de Connaissances</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>EasySoft</h1>
+            <p>Solutions et problèmes résolus pour EasySoft</p>
+        </div>
+    </section>
+
+    <section class="wiki-section">
+        <div class="container">
+            <div class="wiki-breadcrumb">
+                <a href="wiki.html">← Retour à la Base de Connaissances</a>
+            </div>
+
+            <div class="wiki-intro">
+                <p class="wiki-description">
+                    Articles et solutions techniques pour le logiciel EasySoft.
+                </p>
+            </div>
+
+            <div class="wiki-articles">
+<!-- Mot de passe inattendu -->              
+                <article class="wiki-article">
+                    <div class="article-header">
+                        <h3>Mot de passe inattendu</h3>
+                        <div class="article-meta">
+                            <span class="tag">EasySoft</span>
+                            <span class="date">19/09/2025</span>
+                        </div>
+                    </div>
+                    <div class="article-content">
+                        <h4>Description :</h4>
+                        <p>
+                            Après modification d’un bloc fonction “UF” un mot de passe inexistant est demandé à la réouverture alors qu’il n’en à jamais été saisi.
+                        </p>
+                        <p>
+                            <img src="category-easysoft/unknownPassword.png" class="frame" alt="Saisie du mot de passe" />
+                        </p>
+                        <h4>Solution :</h4>
+                        <p>
+                            Bug trouvé, réponse de l'Allemagne :
+                        </p>
+                        <blockquote>
+                            <p>
+                                Francois Navarre<br>
+                                <br>
+                                Hello Bruno,<br>
+                                The developpment find that when an UFB is writed in ST language (EASYSoft7 or 8) and when the last characktere is a “;” then the EASYsoft 8 had a problem to read this UFB and as result comes a password on it.<br>
+                                When the last charactere is <CR> <LF> => no problem<br>
+                                Will be corrected in the Version 8.01<br>
+                                <br>
+                                <strong>problem could occure with LP Language too but it append only one time and they actually don’t find why this append…</strong>
+                            </p>
+                        </blockquote>   
+                    </div>
+                </article>
+<!-- Nombre négatif sur MW -->
+                <article class="wiki-article">
+                    <div class="article-header">
+                        <h3>Nombre négatif sur MW</h3>
+                        <div class="article-meta">
+                            <span class="tag">EasySoft</span>
+                            <span class="date">19/09/2025</span>
+                        </div>
+                    </div>
+                    <div class="article-content">
+                        <h4>Description :</h4>
+                        <p>
+                            Les Easy ne transmettent des nombre négatif que sur les DW, les MB et MW ne sont pas signés.
+                        </p>
+                        <p>
+                            <img src="category-easysoft/dataTypes.png" class="frame" alt="Format des differents types de donnees" />
+                        </p>
+                        <h4>Solution :</h4>
+                        <p>
+                            Pour cela il suffit d’effectuer un complement à 2 sur le MW.
+                        </p>
+                        <p>
+                            <pre class="code-block">
+BV01 (     
+    EN := TRUE,     
+    I1 := MW01,     
+    I2 := ,     
+    ZE => ,     
+    QV => MW02 
+);  
+                                
+QA05 := MW02 + 1;
+                            </pre>
+                        </p>
+                        <p>
+                            Le bloc fonction BVxx doit être parametré en “NOT”.
+                        </p>
+                        <p>
+                            <img src="category-easysoft/fbBV.png" class="frame" alt="Bloc fonction BV" />
+                        </p>
+                        <p>
+                            A la réception, il sera lu en “signé” si l’appareil est parametré pour ca
+                        </p>
+                        <p>
+                            <img src="category-easysoft/result.png" class="frame" alt="Resultat" />
+                        </p>
+                    </div>
+                </article>
+<!-- first cycle bit -->              
+                <article class="wiki-article">
+                    <div class="article-header">
+                        <h3>First cycle bit</h3>
+                        <div class="article-meta">
+                            <span class="tag">EasySoft</span>
+                            <span class="date">30/10/2025</span>
+                        </div>
+                    </div>
+                    <div class="article-content">
+                        <h4>Description :</h4>
+                        <p>
+                            Bit à un sur le premier tour de cycle.
+                        </p>
+                        <h4>Solution :</h4>
+                        <p>
+                            Ajouter ces lignes en fin de programme
+                        </p>
+                        <p>
+                            <pre class="code-block">
+IF M01 = FALSE THEN     
+    M01 := TRUE; 
+END_IF;
+                            </pre>
+                        </p>   
+                        <p>
+                            <img src="category-easysoft/firstCycleBit.png" class="frame" alt="Resultat" />
+                        </p>
+                        <p>
+                            <span style="color: red; background-color: yellow; font-weight: bold;">
+                                Ajouter ces lignes en fin de programme
+                            </span>   
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+    <section class="cta-section">
+        <div class="container">
+            <h2>Besoin d'aide sur EasySoft ?</h2>
+            <p>N'hésitez pas à me contacter pour bénéficier de mon expertise</p>
+            <a href="index.html#contact" class="btn btn-primary">Me contacter</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 BCautom - Automatisme Industriel et Formation. Tous droits réservés.</p>
+            <p>Auto-entrepreneur - Programmation en automatisme industriel</p>
+        </div>
+    </footer>
+</body>
+</html>

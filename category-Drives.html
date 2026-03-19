@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drives - Base de Connaissances - BCautom</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon">⚙️</span>
+                <div class="logo-text">
+                    <h1>BCautom</h1>
+                    <p class="tagline">Expertise en Automatisme Industriel</p>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="competences.html">Compétences</a></li>
+                <li><a href="wiki.html" class="active">Base de Connaissances</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Drives</h1>
+            <p>Solutions et problèmes résolus pour les drives de la gamme Eaton</p>
+        </div>
+    </section>
+
+    <section class="wiki-section">
+        <div class="container">
+            <div class="wiki-breadcrumb">
+                <a href="wiki.html">← Retour à la Base de Connaissances</a>
+            </div>
+
+            <div class="wiki-intro">
+                <p class="wiki-description">
+                    Articles et solutions techniques pour les drives Eaton.
+                </p>
+            </div>
+
+            <div class="wiki-articles">
+<!-- Resistance de freinage sur DC1 -->
+                <article class="wiki-article">
+                    <div class="article-header">
+                        <h3>Choix de resistance de freinage sur DC1</h3>
+                        <div class="article-meta">
+                            <span class="tag">DC1 et ressistance de freinage</span>
+                            <span class="date">08/02/2026</span>
+                        </div>
+                    </div>
+                    <div class="article-content">
+                        <h3>Description :</h3>
+                        <p>
+                            Le choix de la valeur de résistance dépend de plusieurs facteurs, notamment la puissance du moteur, la fréquence des freinages et l’énergie à dissiper. Voici quelques points clés pour t’aider à choisir :
+                        </p>
+                        <p>
+                            <ul>
+                                <li>
+                                    <strong>Résistance faible (valeur ohmique basse) :</strong>
+                                </li>
+                                <ul>
+                                    <li>
+                                        Permet une dissipation plus rapide de l’énergie de freinage.
+                                    </li>
+                                    <li>
+                                        Convient aux applications nécessitant des freinages fréquents et puissants.
+                                    </li>
+                                    <li>
+                                        Peut générer plus de chaleur, nécessitant une bonne ventilation ou un dissipateur thermique adapté.
+                                    </li>
+                                </ul>
+                                <li>
+                                    <strong>Résistance élevée (valeur ohmique haute) :</strong>
+                                </li>
+                                <ul>
+                                    <li>
+                                        Limite le courant de freinage, ce qui peut réduire l’efficacité du freinage.
+                                    </li>
+                                    <li>
+                                        Convient aux applications avec des freinages plus doux ou moins fréquents.
+                                    </li>
+                                    <li>
+                                        Moins de dissipation thermique, donc moins de contraintes sur le refroidissement.
+                                    </li>
+                                </ul>
+                            </ul>
+                        </p>
+                        <p>
+                            Pour un <strong>variateur DC1 de chez EATON</strong>, il est recommandé de vérifier la <strong>valeur minimale admissible</strong> par le variateur. Une résistance trop élevée pourrait ne pas absorber suffisamment l’énergie, tandis qu’une trop faible pourrait entraîner une surcharge thermique. Tu peux consulter les spécifications du modèle exact de ton variateur pour voir les valeurs recommandées.
+                        </p>
+                        <p></p>
+                        <p></p>
+                        <h3>Conseils :</h3>
+                        <p>
+                            Mon collègue Bernhard TEEPE me partage son expérience sur le freinage avec un DC1.
+                        </p>
+                            <blockquote>
+                                <p>
+                                    Hello Bruno,
+                                <p>
+                                    The easiest way is (normally) to use the Drives Selection Aid <a href="https://configurators.eaton.eu/powerxl/?lx=11" target="_blank">Eaton Products & Services - Eaton Europe</a>. Here I identified a mistake, that here a 50 Ohm resistance is offered.
+                                </p>
+                                <p>
+                                    But the minimum allowed resistance for the DC1-127D0NB-A20CE1 <a href="https://www.eaton.com/gb/en-gb/skuPage.185794.html" target="_blank">DC1-127D0NB-A20CE1</a> is 100 Ohm (as mentioned from your side).
+                                </p>
+                                <p>
+                                    <strong>you could deal with this information:</strong> 
+                                </p>
+                                <p>
+                                    My thumb formular is:
+                                </p>
+                                <ul>
+                                    <li>
+                                        Take the minimum allowed brake resistance => 100 Ohm
+                                    </li>
+                                    <li>
+                                        For seldom braking take as continuous power 10 % of the rated power (10 % of 1.5 kW = 150 Watt) => DX-BR100-200 (174237 | Eaton DX Braking resistor | Eaton)
+                                    </li>
+                                    <li>
+                                        For often braking take as continuous power 40 % of the rated power (40 % of 1.5 kW = 600 Watt) => DX-BR100-600 (174251 | Eaton DX Braking resistor | Eaton)
+                                    </li>
+                                    <li>
+                                        For safety application (e.g. crane) take 100 % as continuous power = 1.5 kW; with DC1 I don't see this application
+                                    </li>
+                                </ul>
+                            </blockquote>
+                        </p>
+                    </div>
+                </article>
+
+
+
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Besoin d'aide sur la gamme XP ?</h2>
+            <p>N'hésitez pas à me contacter pour bénéficier de mon expertise</p>
+            <a href="index.html#contact" class="btn btn-primary">Me contacter</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 BCautom - Automatisme Industriel et Formation. Tous droits réservés.</p>
+            <p>Auto-entrepreneur - Programmation en automatisme industriel</p>
+        </div>
+    </footer>
+</body>
+</html>
