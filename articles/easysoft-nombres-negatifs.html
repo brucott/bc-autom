@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nombres négatifs MW | BCautom</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="article-page">
+
+    <header class="top-bar">
+        <div class="container">
+            <div class="brand"><span>BCautom Wiki</span></div>
+            <nav class="nav-menu"><a href="../wiki.html">← Retour au Wiki</a></nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <article class="wiki-article">
+            <header class="article-header">
+                <span class="badge">Programmation / EasySoft</span>
+                <h1>Complément à 2 sur MW</h1>
+                <p class="meta">Date : 19/09/2025 |</p>
+            </header>
+
+            <section class="article-section">
+                <h2>🔍 Problématique</h2>
+                <p>Les MB et MW ne sont pas signés nativement sur EasySoft (contrairement aux DW).</p>
+            </section>
+
+            <section class="article-section">
+                <h2>💻 Code ST</h2>
+                <p>Utiliser le bloc <strong>BVxx</strong> en mode "NOT" suivi d'une addition :</p>
+                <pre class="code-block"><code>
+// Inversion des bits (NOT)
+BV01(EN := TRUE, I1 := MW01, QV => MW02);  
+
+// Finalisation du complément à 2
+QA05 := MW02 + 1;
+                </code></pre>
+            </section>
+        </article>
+    </main>
+</body>
+</html>

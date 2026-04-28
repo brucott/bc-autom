@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Cycle Bit | BCautom</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="article-page">
+
+    <header class="top-bar">
+        <div class="container">
+            <div class="brand"><span>BCautom Wiki</span></div>
+            <nav class="nav-menu"><a href="../wiki.html">← Retour au Wiki</a></nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <article class="wiki-article">
+            <header class="article-header">
+                <span class="badge">Programmation / Logique</span>
+                <h1>Bit de premier cycle</h1>
+                <p class="meta">Date : 30/10/2025 |</p>
+            </header>
+
+            <section class="article-section">
+                <h2>💻 Code ST</h2>
+                <p>L'activation se fait sur le premier tour de cycle.</p>
+                <pre class="code-block"><code>
+IF M01 = FALSE THEN     
+    M01 := TRUE; 
+END_IF;
+                </code></pre>
+                <p>
+                    <img src="../assets/img/wiki/firstCycleBit.png" 
+                            alt="Capture d'écran du programme sur EasySoft" 
+                            class="article-img">
+                </p>
+                <p style="color: #b91c1c; font-weight: bold; margin-top: 15px;">
+                    ⚠️ Important : Placer ces lignes en toute fin de programme.
+                </p>
+            </section>
+        </article>
+    </main>
+</body>
+</html>

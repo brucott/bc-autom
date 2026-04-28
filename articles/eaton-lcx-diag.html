@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnostic Eaton LCX | BCautom</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="article-page">
+
+    <header class="top-bar">
+        <div class="container">
+            <div class="brand"><span>BCautom Wiki</span></div>
+            <nav class="nav-menu"><a href="../wiki.html">← Retour au Wiki</a></nav>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <article class="wiki-article">
+            <header class="article-header">
+                <span class="badge">Puissance / Diagnostic</span>
+                <h1>Diagnostic et Connexion PC : Eaton LCX</h1>
+                <p class="meta">Date : 27/04/2026 | Catégorie : Hardware / Puissance</p>
+            </header>
+
+            <section class="article-section">
+                <h2>🔌 Matériel et Connexion Physique</h2>
+                <p>Pour établir la communication avec un variateur Eaton LCX (ou série 9000X), la connexion s'effectue directement sur la carte de contrôle via le port RS232.</p>
+                <ul>
+                    <li><strong>Accès au port :</strong> Il est nécessaire de <strong>déconnecter l'afficheur (keypad)</strong> pour accéder au connecteur de communication situé en dessous.</li>
+                    <li><strong>Interface :</strong> Le port sur l'unité de contrôle est de type <strong>DB9 Femelle</strong>.</li>
+                    <li><strong>Convertisseur :</strong> Utiliser un adaptateur <strong>USB vers RS232</strong> (indispensable sur les PC modernes).
+                        <br>⚠️ <em>Attention :</em> L'adaptateur doit être doté d'un connecteur <strong>DB9 Mâle</strong> pour s'insérer dans l'unité de contrôle.</li>
+                    <li><strong>Logiciel :</strong> 9000XDrive (v2.0.44 ou supérieure).</li>
+                </ul>
+
+                <p>
+                    <img src="../assets/img/wiki/lcx_blok_diagram.webp" 
+                            alt="Image du schema interne du variateur" 
+                            class="article-img">
+                </p>
+
+            </section>
+
+            <section class="article-section">
+                <h2>🛠️ Procédure de test "Hors Puissance"</h2>
+                <p>Si le variateur semble HS et ne s'allume plus sur le secteur, il est possible d'alimenter uniquement la carte de contrôle pour extraire les données :</p>
+                <div class="code-block">
+                    1. Injecter du 24VDC sur les bornes 6 (+) et 7 (-) de la carte OPTA1 (OPTA9 sur les drives récents).<br>
+                    2. Vérifier l'allumage de la LED d'état de la carte.<br>
+                    3. Brancher l'adaptateur RS232 sur le port DB9 libéré par l'afficheur.<br>
+                    4. Lancer 9000XDrive, configurer le port COM et cliquer sur "On-Line".
+                </div>
+                <p style="margin-top: 15px;">Une fois connecté, allez dans le menu <strong>File -> Service Info...</strong> pour générer le rapport complet de l'appareil.</p>
+            </section>
+
+            <section class="article-section">
+                <h2>🛠️ Procédure de test "IGBT"</h2>
+                <p>Si l'étage de puissance semble HS il est possible de mwesurer la polarisation directe et inverse des diodes de roue libre et des IGBT depuis les bornes principales :</p>
+                <p>
+                    <img src="../assets/img/wiki/Main_circuit_measurements.webp" 
+                            alt="Image de la procédure de test des IGBT" 
+                            class="article-img">
+                </p>
+                <div style="background: #fff5f5; border-left: 5px solid #f87171; padding: 20px; margin: 20px 0;">
+                    <p>⚠️ <b>Sécurité :</b> Attendez au moins 5 minutes après la mise hors tension avant toute intervention sur les bornes de puissance (décharge des condensateurs).</p>
+                </div>
+            </section>
+
+            <div class="article-section">
+                <h2>📖 Documentation Technique</h2>
+                <p>Pour plus de détails sur la configuration du logiciel 9000XDrive avec la série SVX, consultez la notice officielle :</p>
+                <a href="../assets/pdf/9000XDrive-SVX-connection.pdf" class="btn-main" target="_blank">
+                    📥 Télécharger le guide de connexion (PDF)
+                </a>
+            </div>
+
+            <section class="article-section">
+                <h2>⚠️ Diagnostic Rapide</h2>
+                <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+                    <tr style="background: #f8fafc; border-bottom: 2px solid #e2e8f0;">
+                        <th style="padding: 10px; text-align: left;">Symptôme</th>
+                        <th style="padding: 10px; text-align: left;">Cause probable</th>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #e2e8f0;">
+                        <td style="padding: 10px;">Aucun signe de vie en 24VDC</td>
+                        <td style="padding: 10px;">Carte de contrôle endommagée.</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #e2e8f0;">
+                        <td style="padding: 10px;">Connexion OK en 24V, mais HS sur secteur</td>
+                        <td style="padding: 10px;">Défaut de l'étage de puissance (Pont de diode, IGBT, etc.).</td>
+                    </tr>
+                </table>
+            </section>
+        </article>
+
+    </main>
+
+    <footer>
+        <div class="container" style="text-align: center; padding: 20px 0; color: #64748b;">
+            <p>&copy; 2026 BCautom - Expertise Automation</p>
+        </div>
+    </footer>
+</body>
+</html>

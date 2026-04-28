@@ -1,138 +1,95 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Base de Connaissances - BCautom</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Wiki Technique | BCautom</title>
+    <link rel="icon" type="image/png" href="assets/img/logo-50x47.png">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <nav class="navbar">
+
+    <header class="top-bar">
         <div class="container">
-            <div class="logo">
-<!-- <span class="logo-icon">⚙️</span> -->                
-                <span class="logo-icon"><img src="logo-50x47.png"/></span>
-                <div class="logo-text">
-                    <h1>BCautom</h1>
-                    <p class="tagline">Expertise en Automatisme Industriel</p>
-                </div>
+            <div class="brand">
+                <img src="assets/img/logo-50x47.png" alt="BCautom" class="logo">
+                <span>BCautom</span>
             </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="competences.html">Compétences</a></li>
-                <li><a href="wiki.html" class="active">Base de Connaissances</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-            </ul>
+            <nav class="nav-menu">
+                <a href="index.html">Accueil</a>
+                <a href="wiki.html" class="active">Wiki</a>
+                <a href="competences.html">Expertise</a>
+            </nav>
         </div>
-    </nav>
+    </header>
 
-    <section class="page-header">
-        <div class="container">
-            <h1>Base de Connaissances</h1>
-            <p>Solutions et résolutions de problèmes rencontrés sur le terrain</p>
-        </div>
-    </section>
-
-    <section class="wiki-section">
-        <div class="container">
-            <div class="wiki-intro">
-                <p class="wiki-description">
-                    Ce référentiel technique regroupe les diagnostics et les correctifs appliqués lors de mes missions de mise en service et de dépannage. Il a pour objectif de pérenniser le savoir-faire acquis et d'offrir une aide à la décision rapide, garantissant ainsi une réduction significative des temps d'arrêt et une fiabilité accrue de vos systèmes automatisés.
-                </p>
-            </div>
-
-            <div class="wiki-categories">
-                <h2>Catégories</h2>
-                <div class="category-tags" style="margin-bottom: 10px;">
-                    <a href="category-easysoft.html" class="tag">EasySoft</a>
-                    <a href="category-codesys.html" class="tag">CoDeSys</a>
-                    <a href="category-galileo.html" class="tag">Galileo</a>
-                </div>
-                <div class="category-tags" style="margin-bottom: 10px;">
-                    <a href="category-easye4.html" class="tag">EasyE4</a>
-                    <a href="category-xh.html" class="tag">XH</a>
-                    <a href="category-xv.html" class="tag">XV</a>
-                    <a href="category-xc.html" class="tag">XC</a>
-                    <a href="category-xp.html" class="tag">XP</a>
-                    <a href="category-xn.html" class="tag">XN</a>
-                    <a href="category-Drives.html" class="tag">Drives</a>
-                    <a href="category-pkz.html" class="tag">PKZ</a>
-                </div>
-                <div class="category-tags">
-                    <a href="category-programmation.html" class="tag">Programmation</a>
-                    <a href="category-outils.html" class="tag">Outils</a>
-                </div>
-            </div>
-
-            <div class="wiki-articles">
-<!-- Packet Sender                
-                <article class="wiki-article">
-                    <div class="article-header">
-                        <h3>Problème de communication Profinet avec S7-1500</h3>
-                        <div class="article-meta">
-                            <span class="tag">Automates Siemens</span>
-                            <span class="tag">Réseaux Industriels</span>
-                            <span class="date">Janvier 2025</span>
-                        </div>
-                    </div>
-                    <div class="article-content">
-                        <h4>Problème rencontré :</h4>
-                        <p>
-                            Perte intermittente de communication sur un réseau Profinet IO entre un automate S7-1500 
-                            et plusieurs têtes de réseau ET200SP. Les modules apparaissaient en défaut de manière aléatoire.
-                        </p>
-                        
-                        <h4>Diagnostic effectué :</h4>
-                        <ul>
-                            <li>Vérification du câblage : OK</li>
-                            <li>Test des switchs réseau : OK</li>
-                            <li>Analyse des temps de cycle : cycles dépassant 10ms</li>
-                            <li>Conflit d'adresses IP détecté sur le réseau</li>
-                        </ul>
-                        
-                        <h4>Solution appliquée :</h4>
-                        <ol>
-                            <li>Correction des adresses IP en conflit (deux équipements avaient la même IP)</li>
-                            <li>Optimisation des temps de rafraîchissement IO</li>
-                            <li>Ajustement des temps de surveillance (watchdog) dans la configuration matérielle</li>
-                            <li>Mise en place d'un plan d'adressage IP documenté</li>
-                        </ol>
-                        
-                        <h4>Résultat :</h4>
-                        <p>
-                            Communication stable retrouvée. Le système fonctionne sans interruption depuis plus de 3 mois.
-                            Documentation du plan d'adressage IP pour éviter tout futur conflit.
-                        </p>
-                    </div>
-                </article>
---> 
+    <main>
+        <section class="wiki-hero">
+            <div class="container">
+                <h1>Base de Connaissances</h1>
+                <p>Diagnostics, correctifs et archives techniques Eaton / CoDeSys.</p>
                 
+                <div class="search-wrapper">
+                    <input type="text" id="wikiSearch" placeholder="Rechercher un automate, une erreur, un logiciel (ex: XV300, EasySoft...)" autocomplete="off">
+                    <span class="search-icon">🔍</span>
+                </div>
+            </div>
+        </section>
 
-                
+        <section class="wiki-nav container">
+            <div class="category-filter">
+                <button class="filter-btn active" data-filter="all">Tout</button>
+                <button class="filter-btn" data-filter="logiciel">Logiciels</button>
+                <button class="filter-btn" data-filter="hardware">Hardware</button>
+                <button class="filter-btn" data-filter="puissance">Puissance</button>
+            </div>
+        </section>
+
+        <section class="wiki-grid container" id="wikiGrid">
+            
+            <article class="wiki-card" data-category="logiciel" data-tags="codesys plc programmation">
+                <div class="card-tag">Logiciel</div>
+                <h3>Optimisation cycle PLC CoDeSys</h3>
+                <p>Réduction du jitter sur les automates XC200 lors de tâches de régulation rapides.</p>
+                <a href="articles/codesys-cycle.html" class="read-more">Lire le diagnostic →</a>
+            </article>
+
+            <article class="wiki-card" data-category="hardware" data-tags="eaton xv300 ihm display">
+                <div class="card-tag">Hardware</div>
+                <h3>Calibration tactile XV300</h3>
+                <p>Procédure de recalibrage forcé quand l'IHM ne répond plus au démarrage.</p>
+                <a href="articles/xv300-touch.html" class="read-more">Lire le diagnostic →</a>
+            </article>
+
+            <article class="wiki-card" data-category="puissance" data-tags="variateur drive moteur">
+                <div class="card-tag">Puissance</div>
+                <h3>Défaut F01 sur Drive Eaton</h3>
+                <p>Analyse des causes de surintensité au démarrage sur les gammes PowerXL.</p>
+                <a href="articles/eaton-f01.html" class="read-more">Lire le diagnostic →</a>
+            </article>
+
+            <article class="wiki-card" data-category="puissance" data-tags="eaton lcx drive diagnostic">
+                <div class="card-tag">Puissance</div>
+                <h3>Diagnostic Eaton LCX via 9000XDrive</h3>
+                <p>Procédure de connexion RS232 et diagnostic de la carte de contrôle via alimentation 24V externe.</p>
+                <a href="articles/eaton-lcx-diag.html" class="read-more">Lire le diagnostic →</a>
+            </article>
+
+
+            <div id="noResult" style="display: none; text-align: center; width: 100%; grid-column: 1/-1; padding: 40px;">
+                <p>Aucun article ne correspond à votre recherche.</p>
             </div>
 
-            <div class="wiki-footer">
-                <p class="wiki-note">
-                    <strong>Note :</strong> Cette base de connaissances est régulièrement enrichie avec de nouveaux cas rencontrés.
-                    Elle constitue une ressource précieuse pour les techniciens et ingénieurs en automatisme industriel.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section class="cta-section">
-        <div class="container">
-            <h2>Besoin d'aide sur un problème similaire ?</h2>
-            <p>N'hésitez pas à me contacter pour bénéficier de mon expertise</p>
-            <a href="index.html#contact" class="btn btn-primary">Me contacter</a>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 BCautom - Automatisme Industriel et Formation. Tous droits réservés.</p>
-            <p>Auto-entrepreneur - Programmation en automatisme industriel</p>
+            <p>&copy; 2026 BCautom - Base de Connaissances Technique</p>
         </div>
     </footer>
+
+    <script src="js/wiki.js"></script>
 </body>
 </html>

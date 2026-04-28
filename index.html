@@ -1,137 +1,59 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BCautom - Automatisme Industriel et Formation</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>BCautom | Expertise en Automatisme Industriel</title>
+    <link rel="icon" type="image/png" href="assets/img/logo-50x47.png">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo">
-                <span class="logo-icon"><img src="logo-50x47.png"/></span>
-                <div class="logo-text">
-                    <h1>BCautom</h1>
-                    <p class="tagline">Expertise en Automatisme Industriel</p>
-                </div>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html" class="active">Accueil</a></li>
-                <li><a href="competences.html">Compétences</a></li>
-                <li><a href="wiki.html">Base de Connaissances</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
 
-    <header class="hero">
+    <header class="top-bar">
         <div class="container">
-            <div class="hero-content">
-                <h2>Programmation en Automatisme Industriel & Formation</h2>
-                <p class="hero-subtitle">Solutions d'automatisation professionnelles et formation spécialisée pour optimiser vos processus industriels</p>
-                <div class="hero-buttons">
-                    <a href="competences.html" class="btn btn-primary">Découvrir mes compétences</a>
-                    <a href="wiki.html" class="btn btn-secondary">Base de connaissances</a>
-                </div>
+            <div class="brand">
+                <img src="assets/img/logo-50x47.png" alt="BCautom" class="logo">
+                <span>BCautom</span>
             </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="active">Accueil</a>
+                <a href="wiki.html">Wiki</a>
+                <a href="competences.html">Expertise</a>
+            </nav>
         </div>
     </header>
 
-    <section class="services">
-        <div class="container">
-            <h2 class="section-title">Mes Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">⚙️</div>
-                    <h3>Programmation Automatisme</h3>
-                    <p>Développement et programmation de solutions d'automatisme industriel sur mesure adaptées à vos besoins spécifiques.</p>
-                    <ul class="service-list">
-                        <li>Programmation d'automates (PLC)</li>
-                        <li>Systèmes SCADA</li>
-                        <li>Interfaces homme-machine (IHM)</li>
-                        <li>Intégration de systèmes</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">📚</div>
-                    <h3>Formation Professionnelle</h3>
-                    <p>Formation spécialisée en automatisme industriel pour vos équipes techniques et opérationnelles.</p>
-                    <ul class="service-list">
-                        <li>Formation automates programmables</li>
-                        <li>Programmation avancée</li>
-                        <li>Maintenance préventive</li>
-                        <li>Formation sur site</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">🔧</div>
-                    <h3>Support & Maintenance</h3>
-                    <p>Assistance technique et maintenance de vos installations d'automatisme industriel existantes.</p>
-                    <ul class="service-list">
-                        <li>Dépannage et diagnostic</li>
-                        <li>Maintenance préventive</li>
-                        <li>Optimisation de processus</li>
-                        <li>Support technique à distance</li>
-                    </ul>
-                </div>
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Programmation en Automatisme Industriel & Formation</h1>
+                <p>Solutions d'automatisation professionnelles et formation spécialisée pour optimiser vos processus industriels</p>
+                <a href="#contact" class="btn-main">Demander un diagnostic</a>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="why-choose">
-        <div class="container">
-            <h2 class="section-title">Pourquoi BCautom ?</h2>
-            <div class="features-grid">
-                <div class="feature">
-                    <h3>🎯 Expertise Technique</h3>
-                    <p>Connaissance approfondie des systèmes d'automatisme industriel et des dernières technologies</p>
-                </div>
-                <div class="feature">
-                    <h3>⚡ Réactivité</h3>
-                    <p>Intervention rapide et solutions adaptées à vos contraintes de production</p>
-                </div>
-                <div class="feature">
-                    <h3>💼 Approche Personnalisée</h3>
-                    <p>Chaque projet est unique, solutions sur mesure adaptées à vos besoins</p>
-                </div>
-                <div class="feature">
-                    <h3>📈 Formation Continue</h3>
-                    <p>Accompagnement et montée en compétences de vos équipes</p>
-                </div>
+        <section class="features container">
+            <div class="card">
+                <h3>🛠️ Maintenance</h3>
+                <p>Diagnostic rapide et remise en service de vos installations.</p>
             </div>
-        </div>
-    </section>
-
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2 class="section-title">Me Contacter</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>BCautom</h3>
-                    <p>Auto-entrepreneur spécialisé en automatisme industriel</p>
-                    <div class="contact-details">
-                        <p><strong>Email:</strong> bruno@bcautom.fr</p>
-                        <p><strong>Téléphone:</strong> +33 7 82 34 90 10</p>
-                        <p><strong>Disponibilité:</strong> Intervention sur toute la France</p>
-                    </div>
-                </div>
-                <div class="contact-cta">
-                    <h3>Besoin d'une solution d'automatisme ?</h3>
-                    <p>N'hésitez pas à me contacter pour discuter de votre projet ou de vos besoins en formation.</p>
-                    <a href="wiki.html" class="btn btn-primary">Consulter la base de connaissances</a>
-                </div>
+            <div class="card">
+                <h3>💻 Programmation</h3>
+                <p>Maîtrise de CoDeSys, EasySoft et interfaces IHM.</p>
             </div>
-        </div>
-    </section>
+            <div class="card">
+                <h3>📦 Hardware</h3>
+                <p>Expertise matérielle sur les gammes Eaton, XV, XC et XN.</p>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 BCautom - Automatisme Industriel et Formation. Tous droits réservés.</p>
-            <p>Auto-entrepreneur - Programmation en automatisme industriel</p>
+            <p>&copy; 2026 BCautom - Expertise Industrielle</p>
         </div>
     </footer>
+
 </body>
 </html>

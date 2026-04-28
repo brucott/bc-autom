@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnostic : [Nom de l'Erreur] | BCautom</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="article-page">
+
+    <header class="top-bar">
+        <div class="container">
+            <div class="brand">
+                <span>BCautom Wiki</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="wiki.html">← Retour au Wiki</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <article class="wiki-article">
+            <header class="article-header">
+                <span class="badge">Hardware / Eaton XV300</span>
+                <h1>Dépannage Tactile XV300 : Écran figé</h1>
+                <p class="meta">Date : 22 Avril 2026 | Temps de résolution : 45 min</p>
+            </header>
+
+            <section class="article-section">
+                <h2>🔍 Symptômes constatés</h2>
+                <p>L'IHM démarre correctement, mais aucune zone tactile n'est réactive. Le curseur reste fixe même après redémarrage électrique.</p>
+                <div class="image-placeholder">
+                    <p>[Capture d'écran : Vue du menu système bloqué]</p>
+                </div>
+            </section>
+
+            <section class="article-section">
+                <h2>💻 Solution Technique</h2>
+                <p>Nécessite une mise à jour du firmware via l'outil de maintenance Eaton. Voici le segment de configuration CoDeSys à vérifier :</p>
+                
+                <pre class="code-block"><code>
+// Vérification de la communication IHM
+IF (Status_Touch = FALSE) THEN
+    Retry_Count := Retry_Count + 1;
+    Reset_Display := TRUE;
+END_IF;
+                </code></pre>
+            </section>
+
+            <section class="article-section">
+                <h2>✅ Résultat</h2>
+                <p>Après recalibrage forcé via le bouton caché à l'arrière, la dalle est redevenue fonctionnelle. Problème identifié comme une corruption des fichiers de calibration suite à une micro-coupure.</p>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>BCautom - Expertise Automatisme</p>
+        </div>
+    </footer>
+
+</body>
+</html>

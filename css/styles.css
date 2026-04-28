@@ -1,0 +1,257 @@
+
+/* 1. VARIABLES (Le cerveau du design) */
+:root {
+    --primary: #1e40af;       /* Bleu BCautom */
+    --secondary: #334155;    /* Gris Industriel */
+    --accent: #3b82f6;
+    --light: #f8fafc;
+    --white: #ffffff;
+    --text: #0f172a;
+    --max-width: 1100px;
+}
+
+/* 2. RESET & BASE */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    color: var(--text);
+    line-height: 1.6;
+    background-color: var(--white);
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 3. HEADER & NAV (Flexbox) */
+.top-bar {
+    background: var(--white);
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.top-bar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand { display: flex; align-items: center; gap: 10px; font-weight: bold; font-size: 1.4rem; }
+.logo { height: 40px; width: auto}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--secondary);
+    margin-left: 20px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover, .nav-menu a.active { color: var(--primary); }
+
+/* 4. HERO SECTION */
+.hero {
+    background: linear-gradient(rgba(30, 64, 175, 0.05), rgba(30, 64, 175, 0.02));
+    padding: 80px 0;
+    text-align: center;
+}
+
+.hero h1 { font-size: 2.5rem; margin-bottom: 20px; color: var(--primary); }
+
+/* 5. CARDS (Grid) */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: -40px; /* Chevauchement léger pour le style */
+}
+
+.card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    border-top: 4px solid var(--primary);
+}
+
+.btn-main {
+    display: inline-block;
+    background: var(--primary);
+    color: var(--white);
+    padding: 12px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+/* --- EXTENSION WIKI --- */
+
+/* Hero Wiki : Fond un peu plus sombre pour faire ressortir la recherche */
+.wiki-hero {
+    background: var(--secondary);
+    color: var(--white);
+    padding: 60px 0;
+    text-align: center;
+}
+
+.wiki-hero h1 { color: var(--white); margin-bottom: 10px; }
+
+/* Barre de recherche */
+.search-wrapper {
+    position: relative;
+    max-width: 600px;
+    margin: 30px auto 0;
+}
+
+#wikiSearch {
+    width: 100%;
+    padding: 15px 25px 15px 50px;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    outline: none;
+}
+
+.search-icon {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--secondary);
+}
+
+/* Filtres de catégories */
+.category-filter {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 40px 0;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 8px 20px;
+    border-radius: 20px;
+    border: 1px solid #e2e8f0;
+    background: var(--white);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background: var(--primary);
+    color: var(--white);
+    border-color: var(--primary);
+}
+
+/* Grille d'articles (on réutilise l'esprit des cartes de l'index) */
+.wiki-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+    margin-bottom: 60px;
+}
+
+.wiki-card {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.wiki-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.card-tag {
+    display: inline-block;
+    padding: 4px 10px;
+    background: #eff6ff;
+    color: var(--primary);
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.wiki-card h3 { margin-bottom: 10px; color: var(--secondary); }
+.wiki-card p { font-size: 0.95rem; color: #64748b; margin-bottom: 20px; }
+
+.read-more {
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* --- STYLES ARTICLES WIKI --- */
+
+.article-page { background-color: #f1f5f9; }
+
+.wiki-article {
+    background: var(--white);
+    padding: 40px;
+    margin: 40px 0;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.article-header { border-bottom: 2px solid #e2e8f0; margin-bottom: 30px; padding-bottom: 20px; }
+.article-header h1 { color: var(--primary); font-size: 2rem; }
+.meta { color: #64748b; font-size: 0.9rem; margin-top: 10px; }
+
+.article-section { margin-bottom: 40px; }
+.article-section h2 { color: var(--secondary); margin-bottom: 15px; font-size: 1.4rem; }
+
+.badge {
+    display: inline-block;
+    padding: 5px 12px;
+    background: var(--primary);
+    color: white;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-bottom: 15px;
+}
+
+/* Bloc de Code PLC */
+.code-block {
+    background: #1e293b;
+    color: #e2e8f0;
+    padding: 20px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.image-placeholder {
+    background: #e2e8f0;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    border: 2px dashed #cbd5e1;
+    margin: 20px 0;
+}
+
+/* Style pour les images à l'intérieur des articles wiki */
+.wiki-article img {
+    max-width: 100%;    /* L'image ne dépasse jamais la largeur du texte */
+    height: auto;       /* Garde les proportions */
+    border-radius: 8px; /* Coins arrondis pour le look moderne */
+    margin: 20px 0;     /* Espace au-dessus et en-dessous */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Petit relief */
+    display: block;
+}
